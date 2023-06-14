@@ -185,7 +185,7 @@ export function askAppChoice(
   message = "Which app would you like to open?",
   cancelLabel = "Cancel",
   removeText = false,
-  defaultEmailLabel = "Mail",
+  defaultEmailLabel = "Apple Mail",
   actionType = "open"
 ) {
   return new Promise(async (resolve, reject) => {
