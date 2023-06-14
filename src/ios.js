@@ -204,11 +204,7 @@ export function askAppChoice(
       return resolve(availableApps[0]);
     }
 
-    let options = availableApps.map((app) =>
-      actionType === "compose" && app === "apple-mail"
-        ? defaultEmailLabel
-        : titles[app]
-    );
+    let options = availableApps.map((app) => titles[app]);
     options.push(cancelLabel);
 
     ActionSheetIOS.showActionSheetWithOptions(
