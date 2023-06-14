@@ -185,7 +185,7 @@ export function askAppChoice(
   message = "Which app would you like to open?",
   cancelLabel = "Cancel",
   removeText = false,
-  defaultEmailLabel = "Default email reader",
+  defaultEmailLabel = "Mail",
   actionType = "open"
 ) {
   return new Promise(async (resolve, reject) => {
@@ -204,7 +204,11 @@ export function askAppChoice(
       return resolve(availableApps[0]);
     }
 
-    let options = availableApps.map((app) => titles[app]);
+    let options = availableApps.map((app) =>
+      actionType === "compose" && app === "apple-mail"
+        ? defaultEmailLabel
+        : titles[app]
+    );
     options.push(cancelLabel);
 
     ActionSheetIOS.showActionSheetWithOptions(
