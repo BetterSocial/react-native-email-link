@@ -205,7 +205,7 @@ export function askAppChoice(
     }
 
     let options = availableApps.map((app) =>
-      actionType === "compose" && app === "apple-mail"
+        app === "apple-mail"
         ? defaultEmailLabel
         : titles[app]
     );
